@@ -58,8 +58,8 @@ func (kp *Kreditplus) GetCheckoutURL(request CheckoutRequest) (resp Response, er
 
 	pathURL := "/api/checkout/order"
 	//Marshal Order
-	payload, errPayload := json.Marshal(request)
-	if errPayload != nil {
+	payload, err := json.Marshal(request)
+	if err != nil {
 		return response, err
 	}
 
@@ -96,8 +96,8 @@ func (kp *Kreditplus) UpdateTrackingStatus(request UpdateTrackingRequest) (resp 
 
 	pathURL := "/api/order/callback_tracking_online"
 	//Marshal Payload
-	payload, errPayload := json.Marshal(request)
-	if errPayload != nil {
+	payload, err := json.Marshal(request)
+	if err != nil {
 		return response, err
 	}
 
@@ -134,8 +134,8 @@ func (kp *Kreditplus) CancelOrder(request CancelRequest) (resp Response, err err
 
 	pathURL := "/api/order/callback_cancel"
 	//Marshal Payload
-	payload, errPayload := json.Marshal(request)
-	if errPayload != nil {
+	payload, err := json.Marshal(request)
+	if err != nil {
 		return response, err
 	}
 
