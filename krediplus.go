@@ -132,7 +132,7 @@ func (kp *Kreditplus) CancelOrder(request CancelRequest) (resp Response, err err
 	headers["Accept"] = "application/json"
 	headers["Authorization"] = kp.Authorization
 
-	pathURL := "/api/order/callback_cancel"
+	pathURL := "/api/order/callback_cancel_merchant"
 	//Marshal Payload
 	payload, err := json.Marshal(request)
 	if err != nil {
